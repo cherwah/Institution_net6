@@ -63,10 +63,12 @@ using (IServiceScope scope = app.Services.CreateScope()) {
         // before moving pass this line
         context.Database.EnsureCreated();
 
+        // seeding mock-up data into the database
         dbManager.Seed();
     }
 
-    // queries and update
+    // perform queries and update
+    // output will go to your "debug console"
     dbManager.ListTeachDays("Kim", "Tan");
     dbManager.ListModulesWithNoClasses();
     dbManager.ListStudentsWithAtLeastOneClass();
