@@ -1,7 +1,5 @@
 /*
 Project created for Visual Studio Code via:
-    - mkdir Institution_net6
-    - cd Institution_net6
     - dotnet new mvc --framework "net6.0"
 
 Required Packages:
