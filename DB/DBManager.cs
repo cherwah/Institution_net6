@@ -31,12 +31,16 @@ public class DBManager
     Lecturer? lecturer = dbContext.Lecturers.FirstOrDefault(x =>
         x.FirstName == FirstName && x.LastName == LastName
     );
+
     if (lecturer != null)
     {
+      Debug.WriteLine("\nListTeachDays: ");
+
       List<ClassDay> classdays = (List<ClassDay>)lecturer.ClassDays;
       foreach (ClassDay classday in classdays)
       {
         DateTime datetime = classday.RunDate;
+        
         Debug.WriteLine("{0} {1} {2}",
             datetime.Day, datetime.Month, datetime.Year);
       }
@@ -50,6 +54,7 @@ public class DBManager
         x.Classes.Count() == 0
     ).ToList();
 
+    Debug.WriteLine("\nListModulesWithNoClasses: ");
     foreach (Module module in modules)
     {
       Debug.WriteLine("{0} - {1}", module.RefCode, module.Title);
@@ -63,6 +68,7 @@ public class DBManager
         x.Classes.Count() >= 1
     ).ToList();
 
+    Debug.WriteLine("\nListStudentsWithAtLeastOneClass: ");
     foreach (Student student in students)
     {
       Debug.WriteLine("{0} {1}", student.FirstName, student.LastName);

@@ -65,8 +65,8 @@ using (IServiceScope scope = app.Services.CreateScope()) {
         dbManager.Seed();
     }
 
-    // perform queries and update
-    // output will go to your "debug console"
+    // perform queries and update; output 
+    // will go to your "debug console"
     dbManager.ListTeachDays("Kim", "Tan");
     dbManager.ListModulesWithNoClasses();
     dbManager.ListStudentsWithAtLeastOneClass();
